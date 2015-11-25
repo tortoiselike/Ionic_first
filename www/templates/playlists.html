@@ -1,0 +1,18 @@
+<ion-view view-title="Playlists">
+  <ion-content>
+    <ion-refresher on-refresh="doRefresh()"
+                   pulling-text="Pull to refresh..."
+                   refreshing-text="Refreshing!"
+                   refreshing-icon="ion-loading-b">
+
+    </ion-refresher>
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+        {{playlist.title}}
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll  on-infinite="loadMore()" distance="1%" >
+    </ion-infinite-scroll>
+  </ion-content>
+  </ion-content>
+</ion-view>
